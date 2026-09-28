@@ -8,6 +8,16 @@ public class Veiculo {
 	private int valorDiaria;
 	private Boolean disponivel;
 	
+	public Veiculo() {
+	}
+	
+	public Veiculo(String placa, String modelo, int valorDiaria, boolean disponivel) {
+		this.placa = placa;
+		this.modelo = modelo;
+		this.valorDiaria = valorDiaria;
+		this.disponivel = disponivel;
+	}
+	
 	
 	public String getPlaca() {
 		return placa;
@@ -35,6 +45,10 @@ public class Veiculo {
 	}
 	public void setDisponivel(Boolean disponivel) {
 		this.disponivel = disponivel;
+	}
+	
+	public void exibirTipo() {
+		System.out.println("veiculo");
 	}
 	
 }

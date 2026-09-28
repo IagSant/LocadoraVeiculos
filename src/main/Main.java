@@ -1,5 +1,6 @@
 package main;
 
+import model.Calculavel;
 import model.Carro;
 import model.Moto;
 import model.Cliente;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 public class Main {
 	public static void main (String [] args) {
 		
-		Carro carro = new Carro();
+		Carro carro = new Carro(5);
 		carro.setPlaca("ABC-1234");
 		carro.setModelo("HB20");
 		carro.setValorDiaria(150);
@@ -45,8 +46,30 @@ public class Main {
 			System.out.println(veiculo.getModelo());
 		}
 		
+		Veiculo veiculo1 = new Carro(5);
+		Veiculo veiculo2 = new Moto();
 		
+		veiculo1.exibirTipo();
+		veiculo2.exibirTipo();
 		
+		Calculavel calculavel = carro;
+		System.out.println(calculavel.calcularValor(3));
+		
+		Calculavel calculavel2 = moto;
+		System.out.println(calculavel2.calcularValor(3));
+		
+		Carro carro2 = new Carro(5,"HB20");
+		
+		System.out.println(carro2.getQuantidadePortas());
+		System.out.println(carro2.getModelo());
+		
+		Carro carro3 = new Carro("ABC-9999", "i30", 180, true, 4);
+		
+		System.out.println(carro3.getPlaca());
+		System.out.println(carro3.getModelo());
+		System.out.println(carro3.getValorDiaria());
+		System.out.println(carro3.getDisponivel());
+		System.out.println(carro3.getQuantidadePortas());
 		
 	}
 }

@@ -1,6 +1,6 @@
 package model;
 
-public class Moto extends Veiculo{
+public class Moto extends Veiculo implements Calculavel{
 	private int cilindradas;
 
 	public int getCilindradas() {
@@ -11,4 +11,13 @@ public class Moto extends Veiculo{
 		this.cilindradas = cilindradas;
 	}
 	
+	@Override
+	public void exibirTipo() {
+	    System.out.println("moto");
+	}
+	
+	@Override
+	public double calcularValor(int quantidadeDias) {
+	    return getValorDiaria() * quantidadeDias;
+	}
 }
